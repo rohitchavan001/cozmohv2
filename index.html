@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cozmoh — Template Repository</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="noise-overlay"></div>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="index.html" class="nav-brand">Cozmoh</a>
+        <ul class="nav-links">
+          <li><a href="#" id="nav-dashboard" class="active">Dashboard</a></li>
+          <li><a href="#" id="nav-add-template">Add Template</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section id="dashboard-section" class="active-section">
+        <header class="hero">
+          <div class="hero-content">
+            <div class="branding">
+              <div class="logo">Cz</div>
+              <div class="titles">
+                <h1>Template Repository</h1>
+                <p class="lead">Premium templates built for speed, design, and growth.</p>
+              </div>
+            </div>
+            <div class="filter-controls">
+              <div class="search-wrapper">
+                <input type="text" id="search" placeholder="Search templates..." aria-label="Search templates">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <div class="category-filter-wrapper">
+                <select id="category-filter" aria-label="Filter templates by category">
+                  <option value="">All Categories</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Real Estate">Real Estate</option>
+                  <option value="Home Decor">Home Decor</option>
+                  <option value="Travel">Travel</option>
+                  <option value="Health">Health</option>
+                  <option value="IT Services">IT Services</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="Media Production">Media Production</option>
+                  <option value="Consultancy">Consultancy</option>
+                  <option value="Education / Training">Education / Training</option>
+                  <option value="Retail">Retail</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Immigration / Visa">Immigration / Visa</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Portfolio">Portfolio</option>
+                  <option value="Restaurant & Cafe">Restaurant & Cafe</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section aria-label="Template gallery" class="gallery-section">
+          <ul id="grid" class="grid" role="list"></ul>
+        </section>
+      </section>
+
+      <section id="add-template-section" class="hidden-section">
+        <div class="form-card">
+          <h2>Add New Template</h2>
+          <p class="form-desc">Expand the repository by adding a new template link.</p>
+          <form id="add-template-form">
+            <div class="form-group">
+              <label for="template-name">Template Name</label>
+              <input type="text" id="template-name" name="template-name" placeholder="e.g. Portfolio v2" required>
+            </div>
+
+            <div class="form-group">
+              <label for="template-link">Template Link</label>
+              <input type="url" id="template-link" name="template-link" placeholder="https://..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="template-category">Category</label>
+              <select id="template-category" name="template-category">
+                <option value="">Select a category</option>
+                <option value="Finance">Finance</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Home Decor">Home Decor</option>
+                <option value="Travel">Travel</option>
+                <option value="Health">Health</option>
+                <option value="IT Services">IT Services</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Media Production">Media Production</option>
+                <option value="Consultancy">Consultancy</option>
+                <option value="Education / Training">Education / Training</option>
+                <option value="Retail">Retail</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Immigration / Visa">Immigration / Visa</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Portfolio">Portfolio</option>
+                <option value="Restaurant & Cafe">Restaurant & Cafe</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary">Add Template</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">Link copied</div>
+
+    <footer class="footer">
+      <p>&copy; <span id="current-year"></span> Cozmoh Intelligence. Internal Use Only.</p>
+    </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+  </div>
+  <script src="js/templates_data.js"></script>
+  <script src="js/app.js?v=2"></script>
+</body>
+
+</html>
